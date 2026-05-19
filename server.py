@@ -440,7 +440,9 @@ INDEX_HTML = r"""<!doctype html>
         if (data.needs_clarification) {
           addMessage("review", data.clarifying_question ? `I need one more detail: ${data.clarifying_question}` : "I need one more detail before I can answer accurately.");
         } else if (data.needs_human_review) {
-          addMessage("review", data.human_review_note || "Human review recommended for this answer.");
+          if (data.human_review_note) {
+            addMessage("review", data.human_review_note);
+          }
           escalateBtn.style.display = "inline-block";
           escalateBtn.disabled = false;
         }
@@ -490,6 +492,7 @@ INDEX_HTML = r"""<!doctype html>
     });
 
     addMessage("system", "Ask a question to start.");
+    addMessage("review", "Human review recommended for this answer.");
     queryEl.focus();
   </script>
 </body>
