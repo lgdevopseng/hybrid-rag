@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database
+abt_kb.sqlite
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+.env
+
+@ Raw files
+ABT/
+
+# Claude Code
+.claude/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
